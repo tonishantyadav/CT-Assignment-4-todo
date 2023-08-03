@@ -11,7 +11,6 @@ import {
   Spacer,
   useDisclosure,
 } from "@chakra-ui/react";
-import { useState } from "react";
 import { FieldValues, useForm } from "react-hook-form";
 import { BsPencilSquare } from "react-icons/bs";
 import { MdDeleteForever } from "react-icons/md";
@@ -23,8 +22,6 @@ interface Props {
 }
 
 const UpdateTask = ({ task }: Props) => {
-  const [inputValue, setInputValue] = useState(task.title);
-  const [backspaceCount, setBackspaceCount] = useState(0);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { register, handleSubmit } = useForm();
 
@@ -39,23 +36,10 @@ const UpdateTask = ({ task }: Props) => {
     });
   };
 
-  const allowedKeys = /^[a-zA-Z0-9\s!"#$%&'()*+,-./:;<=>?@[\\\]^_`{|}~]+$/;
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === "Enter") {
       event.preventDefault();
-    } else if (event.key === "Backspace") {
-      setBackspaceCount(backspaceCount + 1);
-      setInputValue((prevValue) => prevValue.slice(0, prevValue.length - 1));
-    } else if (allowedKeys.test(event.key)) {
-      setBackspaceCount(0);
-      setInputValue((prevValue) => prevValue + event.key);
-    } else {
-      event.preventDefault();
     }
-  };
-
-  const handleKeyUp = () => {
-    setBackspaceCount(0);
   };
 
   return (
@@ -78,10 +62,8 @@ const UpdateTask = ({ task }: Props) => {
                 type="text"
                 placeholder="Update a note"
                 variant="unstyled"
-                value={inputValue}
                 {...register("title")}
                 onKeyDown={handleKeyDown}
-                onKeyUp={handleKeyUp}
               />
             </ModalHeader>
             <ModalCloseButton />
