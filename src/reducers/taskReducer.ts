@@ -1,5 +1,3 @@
-import defaultTasks from "../data/tasks";
-
 export interface Task {
   id: number;
   title: string;
@@ -28,10 +26,7 @@ interface SearchTask {
 
 export type TaskAction = AddTask | DeleteTask | UpdateTask | SearchTask;
 
-const taskReducer = (
-  tasks: Task[] = defaultTasks,
-  action: TaskAction
-): Task[] => {
+const taskReducer = (tasks: Task[], action: TaskAction): Task[] => {
   switch (action.type) {
     case "ADD":
       return [action.task, ...tasks];

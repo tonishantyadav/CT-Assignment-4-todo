@@ -8,23 +8,24 @@ import {
   Text,
   useColorMode,
 } from "@chakra-ui/react";
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import { MdDeleteForever } from "react-icons/md";
 import { TiTick, TiTickOutline } from "react-icons/ti";
-import UpdateTaskDialog from "./UpdateTaskDialog";
+import useTask from "../hooks/useTask";
 import { Task as TaskType } from "../reducers/taskReducer";
-import TaskContext from "../contexts/taskContext";
+import UpdateTask from "./UpdateTask";
 
 interface Props {
   task: TaskType;
 }
 
-const Task = ({ task }: Props) => {
+const TaskCard = ({ task }: Props) => {
   const [important, setImportant] = useState(false);
   const [completed, setCompleted] = useState(false);
-  const { dispatch } = useContext(TaskContext);
   const { colorMode } = useColorMode();
+
+  const {dispatch} = useTask();
 
   return (
     <Card boxShadow={colorMode === "light" ? "outline" : ""}>
@@ -47,10 +48,10 @@ const Task = ({ task }: Props) => {
             {completed ? (
               <TiTick color="#58e888" size="1.5rem" />
             ) : (
-              <TiTickOutline size="1.5rem" color="58e888"/>
+              <TiTickOutline size="1.5rem" color="58e888" />
             )}
           </Button>
-          <UpdateTaskDialog task={task} />
+          <UpdateTask task={task} />
           <Button
             type="submit"
             color="red.300"
@@ -71,4 +72,4 @@ const Task = ({ task }: Props) => {
   );
 };
 
-export default Task;
+export default TaskCard;

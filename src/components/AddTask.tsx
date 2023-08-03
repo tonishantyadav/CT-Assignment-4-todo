@@ -9,14 +9,14 @@ import {
   ModalOverlay,
   useDisclosure,
 } from "@chakra-ui/react";
-import { useContext } from "react";
 import { FieldValues, useForm } from "react-hook-form";
-import TaskContext from "../contexts/taskContext";
+import useTask from "../hooks/useTask";
 
 const AddTaskDialog = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { register, handleSubmit, reset } = useForm();
-  const { tasks, dispatch } = useContext(TaskContext);
+
+  const { tasks, dispatch } = useTask();
 
   const onSubmit = (data: FieldValues) => {
     console.log(data);

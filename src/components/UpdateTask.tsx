@@ -9,20 +9,20 @@ import {
   ModalOverlay,
   useDisclosure,
 } from "@chakra-ui/react";
-import { useContext } from "react";
 import { FieldValues, useForm } from "react-hook-form";
 import { MdOutlineUpdate } from "react-icons/md";
-import TaskContext from "../contexts/taskContext";
+import useTask from "../hooks/useTask";
 import { Task } from "../reducers/taskReducer";
 
 interface Props {
   task: Task;
 }
 
-const UpdateTaskDialog = ({ task }: Props) => {
+const UpdateTask = ({ task }: Props) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { register, handleSubmit } = useForm();
-  const { dispatch } = useContext(TaskContext);
+
+  const { dispatch } = useTask();
 
   const onSubmit = (data: FieldValues) => {
     console.log(data);
@@ -66,4 +66,4 @@ const UpdateTaskDialog = ({ task }: Props) => {
   );
 };
 
-export default UpdateTaskDialog;
+export default UpdateTask;

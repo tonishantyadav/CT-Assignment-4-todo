@@ -1,7 +1,7 @@
 import { Box, SimpleGrid, Text } from "@chakra-ui/react";
 import { useContext } from "react";
 import TaskContext from "../contexts/taskContext";
-import Task from "./Task";
+import TaskCard from "./TaskCard";
 
 const TaskList = () => {
   const { tasks } = useContext(TaskContext);
@@ -17,7 +17,7 @@ const TaskList = () => {
       templateColumns="repeat(auto-fill, minmax(350px, 1fr))"
     >
       {tasks.map((task) => (
-        <Task key={task.id} task={task} />
+        <TaskCard key={task.id} task={task} />
       ))}
     </SimpleGrid>
   );
