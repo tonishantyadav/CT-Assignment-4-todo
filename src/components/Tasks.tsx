@@ -1,10 +1,9 @@
 import { Box, SimpleGrid, Text } from "@chakra-ui/react";
-import { useContext } from "react";
-import TaskContext from "../contexts/taskContext";
+import { useTask } from "../TaskProvider";
 import TaskCard from "./TaskCard";
 
 const TaskList = () => {
-  const { tasks } = useContext(TaskContext);
+  const { tasks } = useTask();
   if (tasks.length === 0)
     return (
       <Box>

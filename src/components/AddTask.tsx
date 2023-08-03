@@ -10,9 +10,9 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import { FieldValues, useForm } from "react-hook-form";
-import useTask from "../hooks/useTask";
+import { useTask } from "../TaskProvider";
 
-const AddTaskDialog = () => {
+const AddTask = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { register, handleSubmit, reset } = useForm();
 
@@ -63,4 +63,4 @@ const AddTaskDialog = () => {
   );
 };
 
-export default AddTaskDialog;
+export default AddTask;
