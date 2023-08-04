@@ -69,7 +69,7 @@ const UpdateTask = ({ task }: Props) => {
         <ModalOverlay />
         <form onSubmit={handleSubmit(onSubmit)}>
           <ModalContent>
-            <ModalHeader>
+            <ModalHeader marginTop={4}>
               <Input
                 type="text"
                 placeholder="Update your task"
@@ -81,7 +81,7 @@ const UpdateTask = ({ task }: Props) => {
               />
             </ModalHeader>
             <ModalCloseButton />
-            <Flex justify="flex-end" margin={4}>
+            <Flex justify="flex-end" marginRight={4}>
               <Text textColor="gray.500" fontSize="xs">
                 {inputValue.length} / {MAX_CHARACTERS}
               </Text>
@@ -109,7 +109,7 @@ const UpdateTask = ({ task }: Props) => {
                 <Button colorScheme="blue" mr={3} onClick={onClose}>
                   Close
                 </Button>
-                <Button type="submit" variant="ghost" onClick={onClose}>
+                <Button type="submit" variant="outline" onClick={onClose}>
                   Save
                 </Button>
               </Box>
