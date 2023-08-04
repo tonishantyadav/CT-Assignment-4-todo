@@ -9,8 +9,10 @@ import {
   ModalHeader,
   ModalOverlay,
   Spacer,
+  Text,
   useDisclosure,
 } from "@chakra-ui/react";
+import React, { useState } from "react";
 import { FieldValues, useForm } from "react-hook-form";
 import { BsPencilSquare } from "react-icons/bs";
 import { MdDeleteForever } from "react-icons/md";
@@ -24,8 +26,11 @@ interface Props {
 const UpdateTask = ({ task }: Props) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { register, handleSubmit } = useForm();
+  const [inputValue, setInputValue] = useState("");
 
   const { dispatch } = useTask();
+
+  const MAX_CHARACTERS = 50;
 
   const onSubmit = (data: FieldValues) => {
     console.log(data);
@@ -39,6 +44,13 @@ const UpdateTask = ({ task }: Props) => {
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === "Enter") {
       event.preventDefault();
+    }
+  };
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const newValue = event.target.value;
+    if (newValue.length <= MAX_CHARACTERS) {
+      setInputValue(newValue);
     }
   };
 
@@ -60,13 +72,20 @@ const UpdateTask = ({ task }: Props) => {
             <ModalHeader>
               <Input
                 type="text"
-                placeholder="Update a note"
+                placeholder="Update your task"
                 variant="unstyled"
+                value={inputValue}
                 {...register("title")}
                 onKeyDown={handleKeyDown}
+                onChange={handleChange}
               />
             </ModalHeader>
             <ModalCloseButton />
+            <Flex justify="flex-end" margin={4}>
+              <Text textColor="gray.500" fontSize="xs">
+                {inputValue.length} / {MAX_CHARACTERS}
+              </Text>
+            </Flex>
             <Flex margin={4}>
               <Box>
                 <Button
