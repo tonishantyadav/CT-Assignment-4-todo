@@ -1,10 +1,9 @@
 import { HStack, Input } from "@chakra-ui/react";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { FieldValues, useForm } from "react-hook-form";
 import TaskContext from "../contexts/taskContext";
-import SortTasks from "./SortTasks";
 
-const SearchAndSortTask = () => {
+const SearchTask = () => {
   const { register, handleSubmit, reset } = useForm();
   const { dispatch } = useContext(TaskContext);
 
@@ -32,4 +31,4 @@ const SearchAndSortTask = () => {
   );
 };
 
-export default SearchAndSortTask;
+export default SearchTask;

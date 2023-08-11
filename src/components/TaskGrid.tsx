@@ -1,6 +1,6 @@
 import { Box, SimpleGrid } from "@chakra-ui/react";
 import AddTask from "./AddTask";
-import SearchAndSortTask from "./SearchAndSort";
+import SearchTask from "./SearchTask";
 import TaskList from "./Tasks";
 
 const TaskGrid = () => {
@@ -16,7 +16,7 @@ const TaskGrid = () => {
           <AddTask />
         </Box>
         <Box>
-          <SearchAndSortTask />
+          <SearchTask />
         </Box>
       </SimpleGrid>
       <TaskList />
