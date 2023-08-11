@@ -1,7 +1,7 @@
 import { Box, HStack, Heading } from "@chakra-ui/react";
-import { AiOutlineClear } from "react-icons/ai";
 import { SiTask } from "react-icons/si";
 import ColorModeSwitch from "./ColorModeSwitch";
+import ClearTasks from "./ClearTasks";
 
 const NavBar = () => {
   return (
@@ -9,10 +9,10 @@ const NavBar = () => {
       <HStack padding={1} justifyContent="space-between" marginTop={2}>
         <HStack>
           <Heading>Taskaid</Heading>
-          <SiTask size="2em" />
+          <SiTask size="2rem" />
         </HStack>
         <HStack>
-          <AiOutlineClear size="1.5rem" className="clear-icon" />
+          <ClearTasks />
           <ColorModeSwitch />
         </HStack>
       </HStack>

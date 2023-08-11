@@ -16,30 +16,21 @@ import React, { useState } from "react";
 import { FieldValues, useForm } from "react-hook-form";
 import { BsPencilSquare } from "react-icons/bs";
 import { MdDeleteForever } from "react-icons/md";
-import { useTask } from "../TaskProvider";
+import { useTasks } from "../TaskProvider";
 import { Task } from "../reducers/taskReducer";
 
 interface Props {
   task: Task;
 }
 
+const MAX_CHARACTERS = 50;
+
 const UpdateTask = ({ task }: Props) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { register, handleSubmit } = useForm();
   const [inputValue, setInputValue] = useState("");
 
-  const { dispatch } = useTask();
-
-  const MAX_CHARACTERS = 50;
-
-  const onSubmit = (data: FieldValues) => {
-    console.log(data);
-    dispatch({
-      type: "UPDATE",
-      taskID: task.id,
-      taskTitle: data.title,
-    });
-  };
+  const { dispatch } = useTasks();
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === "Enter") {
@@ -52,6 +43,15 @@ const UpdateTask = ({ task }: Props) => {
     if (newValue.length <= MAX_CHARACTERS) {
       setInputValue(newValue);
     }
+  };
+
+  const onSubmit = (data: FieldValues) => {
+    console.log(data);
+    dispatch({
+      type: "UPDATE",
+      taskID: task.id,
+      taskTitle: data.title,
+    });
   };
 
   return (

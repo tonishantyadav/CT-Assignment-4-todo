@@ -10,13 +10,13 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import { FieldValues, useForm } from "react-hook-form";
-import { useTask } from "../TaskProvider";
+import { useTasks } from "../TaskProvider";
 
 const AddTask = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { register, handleSubmit, reset } = useForm();
 
-  const { tasks, dispatch } = useTask();
+  const { tasks, dispatch } = useTasks();
 
   const onSubmit = (data: FieldValues) => {
     console.log(data);

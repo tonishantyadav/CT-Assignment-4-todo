@@ -7,7 +7,7 @@ interface Props {
   children: ReactNode;
 }
 
-export const useTask = () => useContext(TaskContext);
+export const useTasks = () => useContext(TaskContext);
 
 const TaskProvider = ({ children }: Props) => {
   const [tasks, dispatch] = useReducer(taskReducer, defaultTasks);

@@ -1,7 +1,8 @@
-import { Button, HStack, Input } from "@chakra-ui/react";
-import { useContext } from "react";
+import { HStack, Input } from "@chakra-ui/react";
+import { useContext, useState } from "react";
 import { FieldValues, useForm } from "react-hook-form";
 import TaskContext from "../contexts/taskContext";
+import SortTasks from "./SortTasks";
 
 const SearchAndSortTask = () => {
   const { register, handleSubmit, reset } = useForm();
@@ -26,9 +27,6 @@ const SearchAndSortTask = () => {
           borderRadius="50px"
           {...register("searchText")}
         />
-        <Button variant="solid" colorScheme="blue">
-          Sort
-        </Button>
       </HStack>
     </form>
   );
