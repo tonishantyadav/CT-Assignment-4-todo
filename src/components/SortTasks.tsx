@@ -1,4 +1,4 @@
-import { Button } from "@chakra-ui/react";
+import { Button, useColorMode } from "@chakra-ui/react";
 import {
   AiOutlineSortAscending,
   AiOutlineSortDescending,
@@ -10,8 +10,13 @@ interface Props {
 }
 
 const SortTasks = ({ sortOrder, onSortClick }: Props) => {
+  const { colorMode } = useColorMode();
   return (
-    <Button color="yellow.300" variant="unstyled" onClick={onSortClick}>
+    <Button
+      onClick={onSortClick}
+      variant="unstyled"
+      color={colorMode === "light" ? "blue.500" : "yellow.300"}
+    >
       {!sortOrder ? (
         <AiOutlineSortAscending size="1.5rem" />
       ) : (

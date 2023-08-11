@@ -10,6 +10,7 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import { FieldValues, useForm } from "react-hook-form";
+import { BsFillPatchPlusFill } from "react-icons/bs";
 import { useTasks } from "../TaskProvider";
 
 const AddTask = () => {
@@ -32,7 +33,7 @@ const AddTask = () => {
 
   return (
     <>
-      <Button variant="solid" color="#6CB4EE" onClick={onOpen}>
+      <Button variant="solid" colorScheme="blue" onClick={onOpen}>
         Add task
       </Button>
       <Modal isOpen={isOpen} onClose={onClose}>

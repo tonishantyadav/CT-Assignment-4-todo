@@ -2,8 +2,7 @@ import {
   Box,
   Card,
   CardHeader,
-  SimpleGrid,
-  useColorMode,
+  SimpleGrid
 } from "@chakra-ui/react";
 import { Task as TaskType } from "../reducers/taskReducer";
 import UpdateTask from "./UpdateTask";
@@ -13,10 +12,8 @@ interface Props {
 }
 
 const TaskCard = ({ task }: Props) => {
-  const { colorMode } = useColorMode();
-
   return (
-    <Card boxShadow={colorMode === "light" ? "outline" : ""}>
+    <Card variant="filled">
       <SimpleGrid templateColumns="1fr 50px">
         <Box>
           <CardHeader fontSize="lg">{task.title}</CardHeader>

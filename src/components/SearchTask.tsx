@@ -1,6 +1,11 @@
-import { HStack, Input } from "@chakra-ui/react";
+import {
+  Input,
+  InputGroup,
+  InputLeftElement
+} from "@chakra-ui/react";
 import { useContext } from "react";
 import { FieldValues, useForm } from "react-hook-form";
+import { AiOutlineFileSearch } from "react-icons/ai";
 import TaskContext from "../contexts/taskContext";
 
 const SearchTask = () => {
@@ -19,14 +24,16 @@ const SearchTask = () => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <HStack spacing={3}>
+      <InputGroup>
+        <InputLeftElement children={<AiOutlineFileSearch />} />
         <Input
           type="text"
-          placeholder="Search a task..."
+          placeholder="Search task"
           borderRadius="50px"
+          variant="filled"
           {...register("searchText")}
         />
-      </HStack>
+      </InputGroup>
     </form>
   );
 };

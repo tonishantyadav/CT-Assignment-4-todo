@@ -29,10 +29,10 @@ const Tasks = () => {
         <Box>
           <AddTask />
         </Box>
-        <Box marginStart={5}>
+        <Box marginStart={4}>
           <SearchTask />
         </Box>
-        <Box marginStart={5}>
+        <Box marginStart={4}>
           <SortTasks sortOrder={sortOrder} onSortClick={toogleSortOrder} />
         </Box>
       </SimpleGrid>

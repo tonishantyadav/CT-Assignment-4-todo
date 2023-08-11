@@ -1,20 +1,18 @@
-import { Box, HStack, Heading } from "@chakra-ui/react";
-import { SiTask } from "react-icons/si";
-import UserSettings from "./UserSettings";
+import { HStack, Heading } from "@chakra-ui/react";
+import { LiaTasksSolid } from "react-icons/lia";
+import Settings from "./Settings";
 
 const NavBar = () => {
   return (
-    <Box marginX={2} marginY={1}>
-      <HStack padding={1} justifyContent="space-between" marginTop={2}>
+    <>
+      <HStack justifyContent="space-between" margin={3}>
         <HStack>
-          <Heading>Taskaid</Heading>
-          <SiTask size="2rem" />
+          <Heading>Your tasks</Heading>
+          <LiaTasksSolid size="2.5rem"/>
         </HStack>
-        <HStack>
-          <UserSettings />  
-        </HStack>
+        <Settings />
       </HStack>
-    </Box>
+    </>
   );
 };
 

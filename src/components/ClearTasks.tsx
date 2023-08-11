@@ -23,11 +23,13 @@ const ClearTasks = () => {
     onClose();
   };
 
-  if (tasks.length === 0) return null;
-
   return (
     <>
-      <Button onClick={onOpen} variant="unstyled">
+      <Button
+        onClick={onOpen}
+        variant="unstyled"
+        isDisabled={tasks.length === 0 ? true : false}
+      >
         <AiOutlineClear size="1.5rem" className="clear-icon" />
       </Button>
       <Modal isOpen={isOpen} onClose={onClose}>

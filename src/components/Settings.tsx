@@ -14,16 +14,19 @@ import {
 } from "@chakra-ui/react";
 import ClearTasks from "./ClearTasks";
 import ColorModeSwitch from "./ColorModeSwitch";
+import { BsGear } from "react-icons/bs";
 
-const UserSettings = () => {
+const Settings = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <>
-      <Button onClick={onOpen}>Open Panel</Button>
+      <Button onClick={onOpen} variant="unstyled">
+        <BsGear size="2rem" />
+      </Button>
       <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
         <DrawerOverlay />
-        <DrawerContent height="75vh" marginTop="30px">
+        <DrawerContent height="75vh" marginTop="30px" borderRadius="5px">
           <DrawerCloseButton />
           <DrawerHeader>Settings</DrawerHeader>
           <DrawerBody>
@@ -48,4 +51,4 @@ const UserSettings = () => {
   );
 };
 
-export default UserSettings;
+export default Settings;
