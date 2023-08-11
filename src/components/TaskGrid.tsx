@@ -1,24 +1,9 @@
-import { Box, SimpleGrid } from "@chakra-ui/react";
-import AddTask from "./AddTask";
-import SearchTask from "./SearchTask";
+import { Box } from "@chakra-ui/react";
 import TaskList from "./Tasks";
 
 const TaskGrid = () => {
   return (
-    <Box margin={4}>
-      <SimpleGrid
-        templateColumns="100px 1fr"
-        marginTop={8}
-        marginBottom={8}
-        spacing={2}
-      >
-        <Box>
-          <AddTask />
-        </Box>
-        <Box>
-          <SearchTask />
-        </Box>
-      </SimpleGrid>
+    <Box marginX={4} marginTop={10}>
       <TaskList />
     </Box>
   );

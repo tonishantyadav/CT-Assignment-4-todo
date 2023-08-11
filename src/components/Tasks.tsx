@@ -1,9 +1,11 @@
-import { Box, Flex, SimpleGrid, Text } from "@chakra-ui/react";
+import { Box, SimpleGrid, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import { useTasks } from "../TaskProvider";
-import TaskCard from "./TaskCard";
-import SortTasks from "./SortTasks";
 import useTasksSort from "../hooks/useTasksSort";
+import AddTask from "./AddTask";
+import SearchTask from "./SearchTask";
+import SortTasks from "./SortTasks";
+import TaskCard from "./TaskCard";
 
 const TaskList = () => {
   const { tasks } = useTasks();
@@ -23,9 +25,17 @@ const TaskList = () => {
     );
   return (
     <>
-      <Flex justifyContent="flex-end">
-        <SortTasks sortOrder={sortOrder} onSortClick={toogleSortOrder} />
-      </Flex>
+      <SimpleGrid templateColumns={"100px 1fr 50px"} marginBottom={5}>
+        <Box>
+          <AddTask />
+        </Box>
+        <Box marginStart={5}>
+          <SearchTask />
+        </Box>
+        <Box marginStart={5}>
+          <SortTasks sortOrder={sortOrder} onSortClick={toogleSortOrder} />
+        </Box>
+      </SimpleGrid>
       <SimpleGrid
         spacing={4}
         templateColumns="repeat(auto-fill, minmax(350px, 1fr))"

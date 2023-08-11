@@ -21,4 +21,4 @@ const useTasksSort = (tasks: Task[], sortOrder: boolean) => {
   return sortedTasks;
 };
 
-export default useTasksSort;
+export default useTasksSort
