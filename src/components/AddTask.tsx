@@ -10,7 +10,6 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import { FieldValues, useForm } from "react-hook-form";
-import { BsFillPatchPlusFill } from "react-icons/bs";
 import { useTasks } from "../TaskProvider";
 
 const AddTask = () => {
