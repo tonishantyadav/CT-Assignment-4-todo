@@ -24,7 +24,16 @@ interface SearchTask {
   taskTitle: string;
 }
 
-export type TaskAction = AddTask | DeleteTask | UpdateTask | SearchTask;
+interface ClearTask {
+  type: "CLEAR";
+}
+
+export type TaskAction =
+  | AddTask
+  | DeleteTask
+  | UpdateTask
+  | SearchTask
+  | ClearTask;
 
 const taskReducer = (tasks: Task[], action: TaskAction): Task[] => {
   switch (action.type) {
@@ -38,6 +47,8 @@ const taskReducer = (tasks: Task[], action: TaskAction): Task[] => {
       );
     case "SEARCH":
       return tasks.filter((task) => task.title === action.taskTitle);
+    case "CLEAR":
+      return [];
     default:
       return tasks;
   }

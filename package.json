@@ -20,6 +20,7 @@
     "react-hook-form": "^7.45.2",
     "react-icons": "^4.10.1",
     "react-joyride": "^2.5.5",
+    "react-router-dom": "^6.15.0",
     "vercel": "^31.0.4",
     "zustand": "^4.3.9"
   },
