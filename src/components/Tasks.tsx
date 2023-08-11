@@ -7,7 +7,7 @@ import SearchTask from "./SearchTask";
 import SortTasks from "./SortTasks";
 import TaskCard from "./TaskCard";
 
-const TaskList = () => {
+const Tasks = () => {
   const { tasks } = useTasks();
   const [sortOrder, setSortOrder] = useState(false);
 
@@ -48,4 +48,4 @@ const TaskList = () => {
   );
 };
 
-export default TaskList;
+export default Tasks;

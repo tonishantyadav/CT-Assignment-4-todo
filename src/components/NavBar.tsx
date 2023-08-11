@@ -1,7 +1,6 @@
 import { Box, HStack, Heading } from "@chakra-ui/react";
 import { SiTask } from "react-icons/si";
-import ColorModeSwitch from "./ColorModeSwitch";
-import ClearTasks from "./ClearTasks";
+import UserSettings from "./UserSettings";
 
 const NavBar = () => {
   return (
@@ -12,8 +11,7 @@ const NavBar = () => {
           <SiTask size="2rem" />
         </HStack>
         <HStack>
-          <ClearTasks />
-          <ColorModeSwitch />
+          <UserSettings />  
         </HStack>
       </HStack>
     </Box>

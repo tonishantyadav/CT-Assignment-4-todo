@@ -8,7 +8,6 @@ const ColorModeSwitch = () => {
       isChecked={colorMode === "dark"}
       onChange={toggleColorMode}
       colorScheme="blue"
-      margin={2}
     />
   );
 };
