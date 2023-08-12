@@ -1,6 +1,7 @@
 import {
   Box,
   Button,
+  Divider,
   Drawer,
   DrawerBody,
   DrawerCloseButton,
@@ -28,7 +29,8 @@ const Settings = () => {
         <DrawerOverlay />
         <DrawerContent height="75vh" marginTop="30px" borderRadius="5px">
           <DrawerCloseButton />
-          <DrawerHeader>Settings</DrawerHeader>
+          <DrawerHeader fontSize="3xl">Settings</DrawerHeader>
+          <Divider/>
           <DrawerBody>
             <VStack align="stretch">
               <Box>

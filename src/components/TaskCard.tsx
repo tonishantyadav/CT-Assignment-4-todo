@@ -2,6 +2,7 @@ import {
   Box,
   Card,
   CardHeader,
+  HStack,
   SimpleGrid
 } from "@chakra-ui/react";
 import { Task as TaskType } from "../reducers/taskReducer";
@@ -19,7 +20,9 @@ const TaskCard = ({ task }: Props) => {
           <CardHeader fontSize="lg">{task.title}</CardHeader>
         </Box>
         <Box>
-          <UpdateTask task={task} />
+          <HStack>
+            <UpdateTask task={task} />
+          </HStack>
         </Box>
       </SimpleGrid>
     </Card>

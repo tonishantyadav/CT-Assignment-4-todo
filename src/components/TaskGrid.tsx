@@ -1,10 +1,10 @@
 import { Box } from "@chakra-ui/react";
-import Tasks from "./Tasks";
+import TasksList from "./TasksList";
 
 const TaskGrid = () => {
   return (
     <Box marginX={4} marginTop={10}>
-      <Tasks />
+      <TasksList />
     </Box>
   );
 };

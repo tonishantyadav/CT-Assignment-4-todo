@@ -1,4 +1,4 @@
-import { Box, SimpleGrid, Text } from "@chakra-ui/react";
+import { Box, Heading, SimpleGrid, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import { useTasks } from "../TaskProvider";
 import useTasksSort from "../hooks/useTasksSort";
@@ -7,7 +7,7 @@ import SearchTask from "./SearchTask";
 import SortTasks from "./SortTasks";
 import TaskCard from "./TaskCard";
 
-const Tasks = () => {
+const TasksList = () => {
   const { tasks } = useTasks();
   const [sortOrder, setSortOrder] = useState(false);
 
@@ -48,4 +48,4 @@ const Tasks = () => {
   );
 };
 
-export default Tasks;
+export default TasksList;
