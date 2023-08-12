@@ -15,10 +15,9 @@ import {
 import React, { useState } from "react";
 import { FieldValues, useForm } from "react-hook-form";
 import { BsPencilSquare } from "react-icons/bs";
-import { MdDeleteForever } from "react-icons/md";
 import { useTasks } from "../../TaskProvider";
 import { Task } from "../../reducers/taskReducer";
-import TaskCompleted from "./TaskCompleted";
+import TaskDelete from "./TaskDelete";
 import TaskStarred from "./TaskStarred";
 
 interface Props {
@@ -54,6 +53,7 @@ const TaskUpdate = ({ task }: Props) => {
       taskID: task.id,
       taskTitle: data.title,
     });
+    console.log("updated");
   };
 
   return (
@@ -67,9 +67,9 @@ const TaskUpdate = ({ task }: Props) => {
       >
         <BsPencilSquare size="1rem" />
       </Button>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <Modal isOpen={isOpen} onClose={onClose}>
-          <ModalOverlay />
+      <Modal isOpen={isOpen} onClose={onClose}>
+        <ModalOverlay />
+        <form onSubmit={handleSubmit(onSubmit)}>
           <ModalContent>
             <ModalHeader marginTop={4}>
               <Input
@@ -90,22 +90,7 @@ const TaskUpdate = ({ task }: Props) => {
             </Flex>
             <Flex margin={4}>
               <Box>
-                <Button
-                  type="submit"
-                  color="red.300"
-                  colorScheme="red"
-                  variant="ghost"
-                  onClick={() => {
-                    dispatch({
-                      type: "DELETE",
-                      taskID: task.id,
-                    });
-                    onClose;
-                  }}
-                >
-                  <MdDeleteForever size="1.5rem" />
-                </Button>
-                <TaskCompleted />
+                <TaskDelete id={task.id} onClose={onClose} />
                 <TaskStarred />
               </Box>
               <Spacer />
@@ -119,8 +104,8 @@ const TaskUpdate = ({ task }: Props) => {
               </Box>
             </Flex>
           </ModalContent>
-        </Modal>
-      </form>
+        </form>
+      </Modal>
     </>
   );
 };
