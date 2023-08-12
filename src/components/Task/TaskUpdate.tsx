@@ -18,7 +18,6 @@ import { BsPencilSquare } from "react-icons/bs";
 import { useTasks } from "../../TaskProvider";
 import { Task } from "../../reducers/taskReducer";
 import TaskDelete from "./TaskDelete";
-import TaskStarred from "./TaskStarred";
 
 interface Props {
   task: Task;
@@ -91,7 +90,6 @@ const TaskUpdate = ({ task }: Props) => {
             <Flex margin={4}>
               <Box>
                 <TaskDelete id={task.id} onClose={onClose} />
-                <TaskStarred />
               </Box>
               <Spacer />
               <Box>
