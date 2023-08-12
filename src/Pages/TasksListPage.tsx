@@ -1,8 +1,8 @@
 import { Grid, GridItem } from "@chakra-ui/react";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
-import TaskGrid from "../components/TaskGrid";
 import TaskProvider from "../TaskProvider";
+import TaskGrid from "../components/Task/TaskGrid";
 
 const TasksListPage = () => {
   return (

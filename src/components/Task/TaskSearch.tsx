@@ -6,7 +6,7 @@ import {
 import { useContext } from "react";
 import { FieldValues, useForm } from "react-hook-form";
 import { AiOutlineFileSearch } from "react-icons/ai";
-import TaskContext from "../contexts/taskContext";
+import TaskContext from "../../contexts/taskContext";
 
 const SearchTask = () => {
   const { register, handleSubmit, reset } = useForm();

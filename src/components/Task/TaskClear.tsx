@@ -10,7 +10,7 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import { AiOutlineClear } from "react-icons/ai";
-import { useTasks } from "../TaskProvider";
+import { useTasks } from "../../TaskProvider";
 
 const ClearTasks = () => {
   const { tasks, dispatch } = useTasks();

@@ -1,11 +1,11 @@
-import { Box, Heading, SimpleGrid, Text } from "@chakra-ui/react";
+import { Box, SimpleGrid, Text } from "@chakra-ui/react";
 import { useState } from "react";
-import { useTasks } from "../TaskProvider";
-import useTasksSort from "../hooks/useTasksSort";
-import AddTask from "./AddTask";
-import SearchTask from "./SearchTask";
-import SortTasks from "./SortTasks";
+import { useTasks } from "../../TaskProvider";
+import useTasksSort from "../../hooks/useTasksSort";
+import AddTask from "./TaskAdd";
 import TaskCard from "./TaskCard";
+import SearchTask from "./TaskSearch";
+import SortTasks from "./TaskSort";
 
 const TasksList = () => {
   const { tasks } = useTasks();

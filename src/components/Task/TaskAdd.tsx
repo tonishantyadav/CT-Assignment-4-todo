@@ -10,7 +10,7 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import { FieldValues, useForm } from "react-hook-form";
-import { useTasks } from "../TaskProvider";
+import { useTasks } from "../../TaskProvider";
 
 const AddTask = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();

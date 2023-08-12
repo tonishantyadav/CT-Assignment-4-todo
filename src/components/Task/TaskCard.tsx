@@ -1,15 +1,9 @@
-import {
-  Box,
-  Card,
-  CardHeader,
-  HStack,
-  SimpleGrid
-} from "@chakra-ui/react";
-import { Task as TaskType } from "../reducers/taskReducer";
-import UpdateTask from "./UpdateTask";
+import { Box, Card, CardHeader, HStack, SimpleGrid } from "@chakra-ui/react";
+import { Task } from "../../reducers/taskReducer";
+import TaskUpdate from "./TaskUpdate";
 
 interface Props {
-  task: TaskType;
+  task: Task;
 }
 
 const TaskCard = ({ task }: Props) => {
@@ -21,7 +15,7 @@ const TaskCard = ({ task }: Props) => {
         </Box>
         <Box>
           <HStack>
-            <UpdateTask task={task} />
+            <TaskUpdate task={task} />
           </HStack>
         </Box>
       </SimpleGrid>

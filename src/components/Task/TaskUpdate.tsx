@@ -16,8 +16,10 @@ import React, { useState } from "react";
 import { FieldValues, useForm } from "react-hook-form";
 import { BsPencilSquare } from "react-icons/bs";
 import { MdDeleteForever } from "react-icons/md";
-import { useTasks } from "../TaskProvider";
-import { Task } from "../reducers/taskReducer";
+import { useTasks } from "../../TaskProvider";
+import { Task } from "../../reducers/taskReducer";
+import TaskCompleted from "./TaskCompleted";
+import TaskStarred from "./TaskStarred";
 
 interface Props {
   task: Task;
@@ -25,7 +27,7 @@ interface Props {
 
 const MAX_CHARACTERS = 50;
 
-const UpdateTask = ({ task }: Props) => {
+const TaskUpdate = ({ task }: Props) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { register, handleSubmit } = useForm();
   const [inputValue, setInputValue] = useState("");
@@ -65,9 +67,9 @@ const UpdateTask = ({ task }: Props) => {
       >
         <BsPencilSquare size="1rem" />
       </Button>
-      <Modal isOpen={isOpen} onClose={onClose}>
-        <ModalOverlay />
-        <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <Modal isOpen={isOpen} onClose={onClose}>
+          <ModalOverlay />
           <ModalContent>
             <ModalHeader marginTop={4}>
               <Input
@@ -103,6 +105,8 @@ const UpdateTask = ({ task }: Props) => {
                 >
                   <MdDeleteForever size="1.5rem" />
                 </Button>
+                <TaskCompleted />
+                <TaskStarred />
               </Box>
               <Spacer />
               <Box>
@@ -115,10 +119,10 @@ const UpdateTask = ({ task }: Props) => {
               </Box>
             </Flex>
           </ModalContent>
-        </form>
-      </Modal>
+        </Modal>
+      </form>
     </>
   );
 };
 
-export default UpdateTask;
+export default TaskUpdate;

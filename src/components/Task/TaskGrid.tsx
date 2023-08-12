@@ -1,5 +1,5 @@
 import { Box } from "@chakra-ui/react";
-import TasksList from "./TasksList";
+import TasksList from "./TaskList";
 
 const TaskGrid = () => {
   return (

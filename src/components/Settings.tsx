@@ -13,9 +13,9 @@ import {
   VStack,
   useDisclosure,
 } from "@chakra-ui/react";
-import ClearTasks from "./ClearTasks";
-import ColorModeSwitch from "./ColorModeSwitch";
 import { BsGear } from "react-icons/bs";
+import ColorModeSwitch from "./ColorModeSwitch";
+import ClearTasks from "./Task/TaskClear";
 
 const Settings = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
