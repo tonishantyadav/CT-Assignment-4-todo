@@ -1,2 +1,2 @@
 # Taskaid
-The project is under construction!
+The project is under development!
