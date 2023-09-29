@@ -20,7 +20,7 @@ Taskaid is a task management web application built using React and TypeScript. I
 
 ## Demo
 
-You can access the live demo of Taskaid at [https://todo-lime-eight.vercel.app/](https://your-demo-url.com).
+You can access the live demo of Taskaid at [https://todo-lime-eight.vercel.app/](https://todo-lime-eight.vercel.app/).
 
 ## Getting Started
 
